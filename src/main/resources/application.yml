@@ -1,0 +1,31 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+#    url: jdbc:mysql://172.21.234.254:3306/scview
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: scview
+#    password: scview
+  jpa:
+    show-sql: true
+    generate-ddl: false
+#    hibernate:
+#      ddl-auto: none
+#    defer-datasource-initialization: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+server:
+  port: 8087
+  servlet:
+    context-path: /scview
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    database: h2
